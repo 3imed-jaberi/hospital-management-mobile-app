@@ -1,5 +1,4 @@
 node_modules/**/*
-.expo/*
 npm-debug.*
 *.jks
 *.p8
@@ -12,3 +11,7 @@ web-report/
 
 # macOS
 .DS_Store
+
+# ignore .expo gen. folder ⚙️ .. 
+.expo/
+.expo-shared/
