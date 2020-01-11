@@ -1,21 +1,33 @@
 {
   "expo": {
     "name": "Hospital Mangement",
+    "description": " An academic project representing the client side of the JEE project 'Hospital Management' 👨🏻‍⚕️ .. ",
     "slug": "hospital-management-mobile-app",
     "privacy": "public",
     "sdkVersion": "36.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "githubUrl": "https://github.com/3imed-jaberi/hospital-management-mobile-app",
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
+    "icon": "./src/assets/logo.png",
     "splash": {
       "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#ff6600"
+    },
+    "android": {
+      "package": "com.isamm.hospital_mangement",
+      "versionCode": 1,
+      "icon": "./src/assets/logo.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/logo.png",
+        "backgroundColor": "#f3f3f3"
+      },
+      "permissions": []
     },
     "updates": {
       "fallbackToCacheTimeout": 0
