@@ -1,22 +1,52 @@
 {
+  "name": "hospital-management-mobile-app",
+  "version": "1.0.0",
+  "description": "An academic project representing the client side of the JEE project <spring boot> 'Hospital Management' 👨🏻‍⚕️ ..",
   "main": "node_modules/expo/AppEntry.js",
+  "private": true,
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "start:local": "expo start --localhost --android",
+    "start:android": "expo start --android",
+    "start:ios": "expo start --ios",
+    "start:web": "expo start --web",
+    "build": "npm run build",
+    "build:android": "expo build:android",
+    "build:ios": "expo build:ios",
     "eject": "expo eject"
   },
+  "license": "MIT",
   "dependencies": {
+    "@react-native-community/masked-view": "^0.1.5",
+    "axios": "^0.19.0",
     "expo": "~36.0.0",
+    "expo-asset": "~8.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-web": "~0.11.7"
+    "react-native-elements": "^1.2.7",
+    "react-native-gesture-handler": "1.3.0",
+    "react-native-modal-loader": "^1.3.0",
+    "react-native-web": "~0.11.7",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.9.4"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:3imed-jaberi/hospital-management-mobile-app.git"
+  },
+  "author": "Imed Jaberi",
   "devDependencies": {
-    "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+    "@babel/core": "^7.0.0",
+    "babel-preset-expo": "~8.0.0"
   },
-  "private": true
+  "engines": {
+    "node": ">= 10.13.0",
+    "npm": ">= 6.11.2",
+    "yarn": ">= 1.16.0"
+  },
+  "bugs": {
+    "url": "https://github.com/3imed-jaberi/hospital-management-mobile-app/issues"
+  },
+  "homepage": "https://github.com/3imed-jaberi/hospital-management-mobile-app#readme"
 }
