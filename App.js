@@ -1,19 +1,50 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import AppNavigator from './src';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+
+
+const App = () => {
+
+  const [isReady, setIsReady] = useState(false);
+
+
+  const handleFinshLoading = () => setIsReady(true);
+
+
+  const loadAssets = async () => {
+
+    const cacheImages = (images) => images.map(image => (typeof image === 'string') ? Image.prefetch(image) : Asset.fromModule(image).downloadAsync());
+
+    const imageAssets = cacheImages([
+      require('./src/assets/add.png'),
+      require('./src/assets/auth-logo.png'),
+      require('./src/assets/bed.png'),
+      require('./src/assets/bg.png'),
+      require('./src/assets/doctor.png'),
+      require('./src/assets/logo.png'),
+      require('./src/assets/patient.png'),
+      require('./src/assets/room.png'),
+      require('./src/assets/show.png'),
+      require('./src/assets/splash.png')
+    ]);
+
+    await Promise.all([...imageAssets]);
+  }
+
+  return(
+    !isReady 
+        ? 
+    <AppLoading
+      startAsync={loadAssets}
+      onFinish={handleFinshLoading}
+      onError={console.warn}
+    />
+        :
+    <AppNavigator />
+  );    
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default App ;
